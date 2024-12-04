@@ -44,11 +44,11 @@ const handleDelete=(index)=>{
 
   return (
     <>
-<div className="container">
+<div className="container ">
   <div className="header">
         <h1 className='text-center mb-5 mt-3'>IL MIO BLOG</h1>
   </div>
-  
+  <div className='card d-flex justify-content-center' style={{width: "50rem"}}>
   <form onSubmit={handleSubmit}>
      <input 
        type="text" 
@@ -97,6 +97,7 @@ const handleDelete=(index)=>{
        id='category'
 
        >
+        
   <option value="">scegli il tuo genere </option>
   <option value="Fantasy">Fantasy</option>
   <option value="Horror">Horror</option>
@@ -109,7 +110,8 @@ const handleDelete=(index)=>{
         aggiungi
     </button>
   </form>
-  <div className='card' style={{width: "18rem"}}>
+  </div>
+  <div className='card mt-5 ' style={{width: "18rem"}}>
   <ul>
   {posts.map((post,index)=>
   <li key={index}>
