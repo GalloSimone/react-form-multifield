@@ -54,6 +54,7 @@ const handleDelete=(index)=>{
        value={formData.title}
        onChange={handleChange}
        className='form-control'
+       id='title'
        placeholder='Inserisci nome post'
        />
        <input 
@@ -62,6 +63,7 @@ const handleDelete=(index)=>{
        value={formData.author}
        onChange={handleChange}
        className='form-control'
+       id='author'
        placeholder='inserisci autore post'
        />
        <input
@@ -70,8 +72,34 @@ const handleDelete=(index)=>{
         value={formData.Image}
         onChange={handleChange}
         className='form-control'
+        id='image'
         placeholder='inserisci URL immagine'
        />
+       <textarea 
+       name="description" 
+       value={formData.Description}
+       onChange={handleChange}
+       className='form-control'
+       id="description"
+       placeholder='inserisci descrizione post'
+
+       ></textarea>
+       <select
+       name='category' 
+       value={formData.category}
+       onChange={handleChange}
+       className="form-select "
+       id='category'
+
+       >
+  <option selected>scegli il tuo genere </option>
+  <option value="Fantasy">Fantasy</option>
+  <option value="Horror">Horror</option>
+  <option value="Commedia">Commedia</option>
+  <option value="Avventura">Avventura</option>
+  <option value="Romantico">Romantico</option>
+  <option value="Altro">Altro...</option>
+</select>
    <button  type='submit'   className='btn btn-primary m-5'>
         aggiungi
     </button>
