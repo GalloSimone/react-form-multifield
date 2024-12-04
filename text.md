@@ -1,6 +1,3 @@
 Esercizio
 
-Creare un semplice form con un campo input per il titolo di un articolo del blog.
-
-Al submit del form, mostrare la lista degli articoli inseriti.
-Infine dare la possibilità di cancellare ciascun articolo utilizzando un'icona.
+Ampliare l'esercizio precedente aggiungendo, nel form, i campi per immagine, contenuto, categoria (select) e uno stato per pubblicare o meno l'articolo. Utilizzare un unico oggetto per gestire tutti i dati del form.

@@ -1,16 +1,39 @@
 import { useState } from 'react'
 
 function App() {
-  const [title, setTitle] = useState("")
+  const [formData, setFormData] = useState({
+  title:"",
+  author:"",
+  Image: "",
+  Description: "",
+  category:"",
+  isPublished:false,
+  });
+
   const[posts, setPost] = useState([])
+
+  const handleChange = (event)=>{
+    const {name,value,type}=event.target;
+    setFormData((prev) =>({
+      ...prev,
+    }))
+  }
+
  
 
 
   const handleSubmit=(event)=>{
     event.preventDefault();
-    setPost([...posts,{name:title}]);
-    setTitle("");
-  }
+    setPost([...posts,formData]);
+    setFormData({
+      title:"",
+      author:"",
+      Image: "",
+      Description: "",
+      category:"",
+      isPublished:false,
+    });
+  };
 
  
 
@@ -27,12 +50,28 @@ const handleDelete=(index)=>{
   <form onSubmit={handleSubmit}>
      <input 
        type="text" 
-       value={title}
-       onChange={e=>{setTitle(e.target.value)}}
+       name="title"
+       value={formData.title}
+       onChange={handleChange}
        className='form-control'
        placeholder='Inserisci nome post'
        />
-       <p>{title}</p>
+       <input 
+       type="text" 
+       name='author'
+       value={formData.author}
+       onChange={handleChange}
+       className='form-control'
+       placeholder='inserisci autore post'
+       />
+       <input
+        type="text" 
+        name='image'
+        value={formData.Image}
+        onChange={handleChange}
+        className='form-control'
+        placeholder='inserisci URL immagine'
+       />
    <button  type='submit'   className='btn btn-primary m-5'>
         aggiungi
     </button>
